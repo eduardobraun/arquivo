@@ -1,0 +1,40 @@
+[package]
+name = "arquivo"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+dotenv = "0.15"
+tonic = { version = "*", features = ["tls"] }
+tonic-health = "0.4.0"
+prost = "0.8"
+tokio = { version = "1.0", features = ["rt-multi-thread", "signal", "time", "fs", "macros", "net"] }
+tokio-stream = { version =  "0.1", features = ["net"] }
+async-stream = "0.3"
+futures = { version = "0.3", default-features = false, features = ["alloc"] }
+tower = { version = "0.4" }
+# Required for routeguide
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# rand = "0.8"
+# Tracing
+opentelemetry = { version = "0.15", default-features = false, features = ["trace", "rt-tokio"] }
+# opentelemetry = { version = "*", features = ["rt-tokio"] }
+opentelemetry-jaeger = { version = "0.14", features = ["tokio"]}
+tracing = { version = "0.1.26", default-features = false, features = ["std"] }
+tracing-core = { version = "0.1.18" }
+tracing-subscriber = { version = "0.2.19", default-features = true, features = ["registry"] }
+tracing-log = { version = "0.1.2", default-features = false, optional = true }
+tracing-opentelemetry = "0.14.0"
+# Required for wellknown types
+prost-types = "0.7"
+# Hyper example
+# hyper = "0.14"
+# warp = "0.3"
+# http = "0.2"
+# http-body = "0.4"
+# pin-project = "1.0"
+async-trait = "0.1.50"
+
+[build-dependencies]
+tonic-build = { version = "*", features = ["prost"] }

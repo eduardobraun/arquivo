@@ -1,0 +1,22 @@
+syntax = "proto3";
+package arquivo;
+
+service Arquivo {
+  rpc Insert(InsertRequest) returns (InsertResponse) {}
+  rpc Search(SearchRequest) returns (SearchResponse) {}
+}
+
+message InsertRequest {
+  string namespace = 1;
+  string collection = 2;
+  bytes data = 3;
+}
+
+message InsertResponse {
+}
+
+message SearchRequest {
+}
+
+message SearchResponse {
+}
